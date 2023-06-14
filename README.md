@@ -1,29 +1,47 @@
-File Management System
-This program is a file management system that allows users to create, view, and delete files. The program stores both file information and file data in arrays.
+**File Management System**
 
-How to use
-The program menu provides the following options:
+This is a simple file management system implemented in C++. It allows you to create, delete, and view files. The system uses two arrays to store file information and file data.
 
-Create file
-Delete file
-View files
-Exit
-To create a file, select option 1 and enter the file name, file extension, and file data. The program will store the file information and file data in separate arrays. The program can store up to 10 files.
+**Features**
+    Create a file: You can create a new file by providing a name, extension, and data.
+    Delete a file: You can delete a file by providing its name and extension.
+    View files: You can view the list of existing files and their extensions.
+    Exit: You can exit the program.
+    Usage
+    Compile and run the code using a C++ compiler.
+    Follow the on-screen instructions to perform various operations.
 
-To delete a file, select option 2 and enter the file name and file extension of the file you want to delete. The program will delete the file and its associated data from the arrays.
+**Code Explanation**
 
-To view the list of files, select option 3. The program will display the file names and file extensions of all the files that have been created.
+  The code consists of several functions:
 
-To exit the program, select option 4.
+  FileInfo()
+  This function initializes the file information structure array, setting all file indexes to -1 except for the last index, which is set to -3.
 
-Code explanation
-The program is written in C++ and consists of a main function and several helper functions. The helper functions include:
+  FileData()
+  This function initializes the file data structure array, setting all next indexes to -1 except for the last index, which is set to -3.
 
-FileInfo: Initializes the file information array with -1 values.
-FileData: Initializes the file data array with -1 values.
-createFile: Creates a new file and stores the file information and file data in the arrays.
-deleteFile: Deletes a file and its associated data from the arrays.
-viewFile: Displays the list of files that have been created.
-The program uses two structures to store file information and file data. The FileInfo structure includes the file name, file extension, starting index, and file index. The FileData structure includes the file data and the next index.
+  CreateFile()
+  This function allows you to create a new file. It prompts you to enter the file name, extension, and data. The file information is stored in the fileInfo array, and the     file data is stored in the fileData array.
 
-The program limits the number of files that can be created to 10 and limits the amount of data that can be stored to 1000 characters. If the program runs out of space in either array, it will display an error message.
+  deleteFile(char fName[], char fExt[])
+  This function allows you to delete a file by providing its name and extension. It searches for the file in the fileInfo array and deletes the corresponding file            information and data from the fileData array.
+
+  ViewFile()
+  This function displays the file information and data stored in the fileInfo and fileData arrays.
+
+  main()
+  The main() function is the entry point of the program. It calls the FileInfo() and FileData() functions to initialize the arrays and then enters a loop to accept user input and perform operations accordingly.
+
+How to Use
+Compile the code using a C++ compiler. For example, you can use the following command in a terminal:
+
+    g++ main.cpp -o file_management_system
+    
+Run the compiled program. For example, using the following command:
+
+    ./file_management_system
+    
+Follow the on-screen instructions to create, delete, and view files.
+
+Note: This code has a limited capacity to store file information and data. It uses fixed-size arrays, so it can handle up to 10 file information entries and 1000 file data entries.
